@@ -7,7 +7,7 @@
 //     document.write(`</li>`);
 // }
 // document.write(`</ul>`);
-
+//
 let simpsons = [
     {
         name: 'Bart',
@@ -45,10 +45,77 @@ let simpsons = [
         photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
     },
 ];
-for (let s of simpsons) {document.write(`<div>`)
-    for (let field in s) {
+// document.write(`<h2>Template 2.1 </h2>`);
+// document.write(`<div>`)
+// for (let i = 0; i < simpsons.length; i++) {
+//     const simpson = simpsons[i];
+//     document.write(`${simpson['name']}`);
+//     document.write(` ${simpson['surname']}`);
+//     document.write(' Age is '+simpson['age']+'. ');
+//     document.write(simpson['info']);
+//     document.write(`<div>`)
+//     document.write(`<img class="img" src="${simpson['photo']}" alt="">`);
+//     document.write(`</div>`);
+// }
+// document.write(`</div>`);
 
-        document.write(field + ' '+ s[field]);
+// document.write(`<h2>Template 2.2 </h2>`);
+// for (let i = 0; i < simpsons.length; i++) {
+//     const simpson = simpsons[i];
+//     document.write(`<div>`)
+//     document.write(`<h2>${simpson['name']} ${simpson['surname']}. Age is ${simpson['age']}.</h2>`);
+//     document.write(`<p> ${simpson['info']}</p>`);
+//     document.write(`<img class="img" src="${simpson['photo']}" alt="">`);
+//     document.write(`</div>`);
+// }
 
-    }document.write(`</div>`);
-}
+// document.write(`<h2>Template 2.3 </h2>`);
+// document.write(`<div>`)
+// for (let i = 0; i < simpsons.length; i++) {
+//     const simpson = simpsons[i];
+//     document.write(`<div>`)
+//     document.write(`<h2>${simpson['name']}  ${simpson['surname']}. Age is ${simpson['age']}.</h2>`);
+//     document.write(`<p> ${simpson['info']}</p>`);
+//     document.write(`<img class="img" src="${simpson['photo']}" alt="">`);
+//     document.write(`</div>`);
+// }
+// document.write(`</div>`);
+
+// let products = [
+//     {
+//         title: 'milk',
+//         price: 22,
+//         image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+//     },
+//     {
+//         title: 'juice',
+//         price: 27,
+//         image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+//     },
+//     {
+//         title: 'tomato',
+//         price: 47,
+//         image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+//     },
+//     {
+//         title: 'tea',
+//         price: 15,
+//         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+//     },
+// ];
+// document.write(`<h2>Template 3.1 </h2>`);
+// document.write(`<div>`)
+// for (let i = 0; i < products.length; i++) {
+//     const product = products[i];
+//     document.write(`<div>`)
+//     document.write(`<h3>${product['title']} Price - ${product['price']}</h3>`);
+//     document.write(`<img class="img" src="${product['image']}" alt="">`);
+//     document.write(`</div>`);
+// }
+// document.write(`</div>`);
+
+
+
+
+
+
