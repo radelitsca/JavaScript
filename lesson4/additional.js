@@ -20,10 +20,44 @@
 // add(2, 5);
 
 // - створити функцію  яка приймає два масиви та скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
+// function add(array, arr) {
+//     let result = [];
+//     for (let i=0; i<array.length; i++) {
+// result[i] = arr[i]+array[i];
+//     }
+//     return result;
+// }
+// let mass = add([2, 5, 7, 9], [1, 3, 5, 7]);
+// console.log(mass);
 
+// - Створити функцію яка приймає масив будь яких объектів, та повертає масив ключів всіх обєктів
+// function  objects (array) {
+//     let arr = [];
+//     for (let i=0; i<array.length; i++) {
+//         const element = array[i]
+//           for (const key in element) {
+//              arr[arr.length] = key;
+//           }
+//
+//     }
+//     console.log(arr);
+// }
+// objects ([{id:1, name: 'vasya', age: 12}, {model: 'Kemry'}]);
 
-
-
+// - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
+// let mas = [{name: 'Dima', age: 13}, {model: 'Camry'}];
+// function  objects (array) {
+//     let arr = [];
+//     for (let i=0; i<array.length; i++) {
+//         const element = array[i];
+//           for (const key in element) {
+//              arr[arr.length] = element[key];
+//           }
+//
+//     }
+//     console.log(arr);
+// }
+// objects (mas);
 
 
 
