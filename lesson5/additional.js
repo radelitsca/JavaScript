@@ -6,21 +6,21 @@
 // }
 // num(10);
 // - Даны два целых числа A и В . Выведите все числа от A до B включительно, в порядке возрастания, если A < B, или в порядке убывания в противном случае.
-// let output = (x,y) => {
-//     for (let i = x; i <= y; i++) {
-//         console.log(i);
-//     }
-// }
-// let nums = (a, b) => {
-//     if (a<b) {
-//         output(a,b);
-//         }  else if (a>b) {
-//         output(b,a);
-//         } else {
-//         console.log('Invalid params');
-//     }
-// }
-// nums(30, 20);
+let output = (x,y) => {
+    for (let i = x; i <= y; i++) {
+        console.log(i);
+    }
+}
+let nums = (a, b) => {
+    if (a<b) {
+        output(a,b);
+        }  else if (a>b) {
+        output(b,a);
+        } else {
+        console.log('Invalid params');
+    }
+}
+nums(10, 20);
 // -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
 //   EXAMPLE:
 //   foo([9,8,0,4], 0) // ==> [ 8, 9, 0, 4 ]
