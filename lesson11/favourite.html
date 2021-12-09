@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
+    let users = JSON.parse(localStorage.getItem('favourite'));
+    for (const user of users) {
+        let divUser = document.createElement('div');
+        divUser.innerText = `Name: ${user.name},  age:  ${user.age},  status:  ${user.status}`
+        document.body.append(divUser);
+    }
+</script>
+</body>
+</html>
