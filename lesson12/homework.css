@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 10px;
+}
+.post {
+    width: 19%;
+    text-align: justify;
+padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}

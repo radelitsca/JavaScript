@@ -17,8 +17,18 @@
 //     let model = this.carmodel.value;
 //     let type = this.type.value;
 //     let volume = this.volume.value;
-//     let car = [{model: model}, {type: type}, {volume: volume}];
-//     localStorage.setItem('car', JSON.stringify(car));
+//     let carItem = [{model: model}, {type: type}, {volume: volume}];
+//     let car = JSON.parse(localStorage.getItem('car')) || [];
+//     if ( localStorage.getItem('car') === null) {
+//         car = [];
+//         car.push(carItem);
+//         localStorage.setItem('car', JSON.stringify(car));
+//     } else {
+//         car = JSON.parse(localStorage.getItem('car'));
+//         car.push(carItem);
+//         localStorage.setItem('car', JSON.stringify(car));
+//
+//     }
 // }
 
 
