@@ -24,6 +24,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                             item.innerText = `${itemkey}: ${user[userkey][itemkey]}`;
                             wrapper.appendChild(item);
                             userWrap.appendChild(wrapper);
+
                         } else {
                             let wrapper2 = document.createElement('div');
                             for (const key in user[userkey][itemkey]) {
@@ -41,72 +42,47 @@ fetch('https://jsonplaceholder.typicode.com/users')
             ShowPosts.innerText = 'Show posts';
             wrap.append(ShowPosts);
             ShowPosts.onclick = function () {
-                fetch(`https://jsonplaceholder.typicode.com/posts/${user.id}`)
-                    .then(value => value.json())
-                    .then(value => {
+                fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
+                    .then(posts => posts.json())
+                    .then(posts => {
                         let div = document.createElement('div');
-
-                        let divUserID = document.createElement('div');
-                        divUserID.innerText = `User id: ${value.userId}`;
-                        div.append(divUserID);
-
-                        let divID = document.createElement('div');
-                        divID.innerText = `Id: ${value.id}`;
-                        div.append(divID);
-
-                        let divTitle = document.createElement('div');
-                        divTitle.innerText = `Title: ${value.title}`;
-                        div.append(divTitle);
-
-                        let divComments = document.createElement('div');
-                        divComments.innerText = `Body: ${value.body}`;
-                        div.append(divComments);
-
-                        let ShowComments = document.createElement('button');
-                        ShowComments.innerText = 'Show comments';
-
-                        ShowComments.onclick = function () {
-                            fetch(`https://jsonplaceholder.typicode.com/comments/${user.id}`)
-                                .then(value => value.json())
-                                .then(value => {
-                                    let div = document.createElement('div');
-                                    div.classList.add('comment');
-                                    let divpostID = document.createElement('div');
-                                    divpostID.innerText = `Post id: ${value.postId}`;
-
-                                    let divID = document.createElement('div');
-                                    divID.innerText = `Id: ${value.id}`;
-
-                                    let name = document.createElement('div');
-                                    name.innerText = `Name: ${value.name}`;
-
-                                    let email = document.createElement('div');
-                                    email.innerText = `Email: ${value.email}`;
-
-                                    let body = document.createElement('div');
-                                    divID.innerText = `Body: ${value.body}`;
-
-                                    div.append(divpostID, divID, name, email, body);
-
-                                    let line = document.createElement('hr');
-                                    line.style.width = '100%';
-                                    userWrap.append(div, line);
-
-                                    ShowComments.disabled = true;
-                                })
+                        for (const post of posts) {
+                            if (user.id === post.userId) {
+                                for (const Key in post) {
+                                    let postItem = document.createElement('div');
+                                    postItem.innerText = `${Key} : ${post[Key]}`;
+                                    postItem.classList.add('postId');
+                                    div.append(postItem);
+                                }
+                            }
+                            let ShowComments = document.createElement('button');
+                            ShowComments.innerText = 'Show comments';
+                            let divPost = document.createElement('div');
+                            div.append(ShowComments, divPost);
+                            ShowComments.onclick = function () {
+                                fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
+                                    .then(comments => comments.json())
+                                    .then(comments => {
+                                        for (const comment of comments) {
+                                            if (post.id === comment.postId) {
+                                                for (const key in comment) {
+                                                    let divComment = document.createElement('div');
+                                                    divComment.innerText = `${key}: ${comment[key]}`;
+                                                    divPost.append(divComment);
+                                                }
+                                                let line = document.createElement('hr');
+                                                divPost.appendChild(line);
+                                            }
+                                        }
+                                        ShowComments.disabled = true;
+                                    })
+                            }
+                            let line = document.createElement('hr');
+                            div.appendChild(line);
+                            userWrap.append(div);
+                            ShowPosts.disabled = true;
                         }
-
-                        let line = document.createElement('hr');
-                        line.style.width = '100%';
-                        userWrap.append(div, ShowComments, line);
-
-                        ShowPosts.disabled = true;
-
                     })
-
             }
         }
     })
-
-
-

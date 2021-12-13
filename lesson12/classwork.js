@@ -30,7 +30,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             button.innerText = 'Show comments';
 
             button.onclick = () => {
-                fetch(`https://jsonplaceholder.typicode.com/comments/${element.id}/comments`)
+                fetch(`https://jsonplaceholder.typicode.com/posts/${element.id}/comments`)
                     .then(value => value.json())
                     .then(value => {
                         for (const item of value) {
